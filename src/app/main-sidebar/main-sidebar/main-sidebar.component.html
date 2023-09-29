@@ -1,0 +1,32 @@
+<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul class="sidebar-menu" data-widget="tree">
+            <li id="LiDashBoard">
+                <a class="nav-link" routerLink="dashboard">
+                    <i class="fa fa-dashboard"></i><span>DashBoard</span>
+                </a>
+            </li>
+
+            <li class="treeview" id="LiUsers" (click)="OnClick_LiUsers('LiUsers', 'Null')">
+                <a href="#" >
+                    <i class="fa fa-users" ></i><span>Users</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li id="LiUserAddEdit" (click)="OnClick_LiUsers('LiUsers', 'LiUserAddEdit')">
+                        <a lass="nav-link" routerLink="user-add-edit">
+                            <i class="fa fa-circle-o"></i>Add/Update
+                        </a>
+                    </li>
+                    <li id="LiUserList" (click)="OnClick_LiUsers('LiUsers', 'LiUserList')">
+                        <a lass="nav-link" routerLink="user-list">
+                            <i class="fa fa-circle-o"></i>List
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</aside>
