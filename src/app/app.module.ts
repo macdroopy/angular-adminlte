@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import appRoutes from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UserAddEditComponent } from './users/user-add-edit/user-add-edit.component';
-import { UserListComponent } from './users/user-list/user-list.component';
+import { UserAddEditComponent } from './user/user-add-edit/user-add-edit.component';
+import { UserListComponent } from './user/user-list/user-list.component';
 import { LoginComponent } from './account/login/login.component';
 import { LogoutComponent } from './account/logout/logout.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
@@ -13,6 +13,7 @@ import { MainSidebarComponent } from './main-sidebar/main-sidebar/main-sidebar.c
 import { ContentWrapperComponent } from './content-wrapper/content-wrapper/content-wrapper.component';
 import { MainFooterComponent } from './main-footer/main-footer/main-footer.component';
 import { ControlSidebarComponent } from './control-sidebar/control-sidebar/control-sidebar.component';
+import { UserDetailsComponent } from './user/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ControlSidebarComponent } from './control-sidebar/control-sidebar/contr
     ContentWrapperComponent,
     MainFooterComponent,
     ControlSidebarComponent,
+    UserDetailsComponent,
   ],
   imports: [
     BrowserModule,

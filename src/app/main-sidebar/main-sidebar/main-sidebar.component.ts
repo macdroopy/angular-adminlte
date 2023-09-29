@@ -14,7 +14,7 @@ export class MainSidebarComponent {
 
   public  ngOnInit() {
     console.log("ngOnInit");
-    this.OnClick_LiUsers('LiUsers', 'Null');
+    this.OnSelected_Menu('LiUsers', 'Null');
   }
 
   public ngDoCheck() {
@@ -42,9 +42,11 @@ export class MainSidebarComponent {
     console.log("ngOnDestroy");
   }
 
-  OnClick_LiUsers (LiParent: string, LiChild:string) {
+  OnSelected_Menu (LiParent: string, LiChild:string) {
+    $("li").removeClass("active menu-open");
+    
     if (LiParent != "Null") {
-      $("#" + LiParent + "").addClass("active open");
+      $("#" + LiParent + "").addClass("active menu-open");
     }
     
     if (LiChild != "Null") {

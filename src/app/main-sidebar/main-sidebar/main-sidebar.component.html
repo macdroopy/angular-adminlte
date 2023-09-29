@@ -1,13 +1,14 @@
 <aside class="main-sidebar">
     <section class="sidebar">
         <ul class="sidebar-menu" data-widget="tree">
-            <li id="LiDashBoard">
-                <a class="nav-link" routerLink="dashboard">
+
+            <li id="LiDashBoard" (click)="OnSelected_Menu('LiDashBoard', 'Null')">
+                <a routerLink="dashboard">
                     <i class="fa fa-dashboard"></i><span>DashBoard</span>
                 </a>
             </li>
 
-            <li class="treeview" id="LiUsers" (click)="OnClick_LiUsers('LiUsers', 'Null')">
+            <li class="treeview" id="LiUsers" (click)="OnSelected_Menu('LiUsers', 'Null')">
                 <a href="#" >
                     <i class="fa fa-users" ></i><span>Users</span>
                     <span class="pull-right-container">
@@ -15,13 +16,13 @@
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li id="LiUserAddEdit" (click)="OnClick_LiUsers('LiUsers', 'LiUserAddEdit')">
-                        <a lass="nav-link" routerLink="user-add-edit">
+                    <li id="LiUserAddEdit" (click)="OnSelected_Menu('LiUsers', 'LiUserAddEdit')">
+                        <a  routerLink="user-add-edit">
                             <i class="fa fa-circle-o"></i>Add/Update
                         </a>
                     </li>
-                    <li id="LiUserList" (click)="OnClick_LiUsers('LiUsers', 'LiUserList')">
-                        <a lass="nav-link" routerLink="user-list">
+                    <li id="LiUserList" (click)="OnSelected_Menu('LiUsers', 'LiUserList')">
+                        <a routerLink="user-list">
                             <i class="fa fa-circle-o"></i>List
                         </a>
                     </li>
