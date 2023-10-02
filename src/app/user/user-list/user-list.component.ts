@@ -7,5 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent {
-
+  usersList: any[] = 
+  [
+    {
+      "userId": 1,
+      "firstName": "Alejandro",
+      "lastName": "Larios",
+      "email": "macdroopy@eldebugger.com",
+    },
+    {
+      "userId": 2,
+      "firstName": "Sonia",
+      "lastName": "Zuniga",
+      "email": "stzalan@gmail.com",
+    }
+  ];
 }

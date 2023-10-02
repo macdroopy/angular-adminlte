@@ -13,7 +13,7 @@
 					</div>
 				</div>
 				<div class="box-body">
-					<table id="tblUserList" class="table table-bordered table-striped">
+					<table id="tblUserList" class="table table-bordered table-striped" *ngIf="usersList.length">
 						<thead>
 							<tr>
 								<th>Id</th>
@@ -24,6 +24,24 @@
 							</tr>
 						</thead>
 						<tbody>
+							<tr *ngFor="let item of usersList">
+								<td class="text-center">{{ item.userId }}</td>
+								<td class="text-center">{{ item.firstName }}</td>
+								<td class="text-center">{{ item.lastName }}</td>
+								<td>{{ item.email }}</td>
+								<td class="text-center">
+                                    <a class="btn btn-info btn-xs">
+                                        <span>
+                                            <i class="fa fa-fw fa-edit"></i> Edit
+                                        </span>
+                                    </a>
+                                    <a class="btn btn-danger btn-xs">
+                                        <span>
+                                            <i class="fa fa-fw fa-remove"></i> Delete
+                                        </span>
+                                    </a>
+                                </td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
