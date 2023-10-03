@@ -19,7 +19,6 @@ export class MainSidebarComponent {
 
   public ngDoCheck() {
     console.log("ngDoCheck");
-    
   }
   
   public ngAfterContentInit() {

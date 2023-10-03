@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import appRoutes from './app-routing.module';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { UserAddEditComponent } from './user/user-add-edit/user-add-edit.component';
 import { UserListComponent } from './user/user-list/user-list.component';
@@ -14,6 +15,9 @@ import { ContentWrapperComponent } from './content-wrapper/content-wrapper/conte
 import { MainFooterComponent } from './main-footer/main-footer/main-footer.component';
 import { ControlSidebarComponent } from './control-sidebar/control-sidebar/control-sidebar.component';
 import { UserDetailsComponent } from './user/user-details/user-details.component';
+import {DataTablesModule} from 'angular-datatables';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,10 @@ import { UserDetailsComponent } from './user/user-details/user-details.component
   imports: [
     BrowserModule,
     RouterModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    DataTablesModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

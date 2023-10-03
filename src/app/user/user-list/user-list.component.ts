@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-user-list',
@@ -22,4 +23,52 @@ export class UserListComponent {
       "email": "stzalan@gmail.com",
     }
   ];
+
+  public ngOnChanges() {
+    console.log("ngOnChanges");
+  }
+
+  public  ngOnInit() {
+    console.log("ngOnInit");
+  }
+
+  public ngDoCheck() {
+    console.log("ngDoCheck");
+  }
+  
+  public ngAfterContentInit() {
+    console.log("ngAfterContentInit");
+  }
+
+  public ngAfterContentChecked() {
+    console.log("ngAfterContentChecked");
+  }
+
+  public ngAfterViewInit() {
+    $("#tblUserList").DataTable({
+      "paging": true,
+      "lengthChange": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "autoWidth": true
+    });
+    console.log("ngAfterViewInit");
+  }
+
+  public ngAfterViewChecked() {
+    console.log("ngAfterViewChecked");
+  }
+
+  public ngOnDestroy() {
+    console.log("ngOnDestroy");
+  }
+
+  OnClick_Edit(userId: string){
+    console.log("OnClicked_Edit: " + userId);
+  }
+
+  OnClick_Delete(userId: string){
+    console.log("OnClicked_Delete: " + userId);
+  }
 }
