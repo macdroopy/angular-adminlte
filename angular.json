@@ -38,7 +38,8 @@
               "src/assets/AdminLTE/bower_components/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css",
               "src/assets/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.css",
               "src/assets/AdminLTE/plugins/bootstrap-slider/slider.css",
-              "src/assets/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css"
+              "src/assets/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.css",
+              "node_modules/datatables.net-dt/css/jquery.dataTables.min.css"
             ],
             "scripts": [
               "src/assets/scripts/jquery.min.js",
@@ -69,7 +70,9 @@
               "src/assets/AdminLTE/bower_components/chart.js/Chart.js",
               "src/assets/scripts/FormatNumberDateTime.js",
               "src/assets/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
-              "src/assets/scripts/DashBoard.js"
+              "src/assets/scripts/DashBoard.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.min.js"
             ]
           },
           "configurations": {
