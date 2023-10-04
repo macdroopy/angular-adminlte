@@ -70,9 +70,7 @@
               "src/assets/AdminLTE/bower_components/chart.js/Chart.js",
               "src/assets/scripts/FormatNumberDateTime.js",
               "src/assets/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js",
-              "src/assets/scripts/DashBoard.js",
-              "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/datatables.net/js/jquery.dataTables.min.js"
+              "src/assets/scripts/DashBoard.js"
             ]
           },
           "configurations": {

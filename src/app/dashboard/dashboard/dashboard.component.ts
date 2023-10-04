@@ -7,6 +7,6 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
   ngOnInit() {
-    console.log("dashboard loaded");
+    console.log("app-dashboard-dashboard loaded");
   }
 }

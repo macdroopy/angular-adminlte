@@ -1,74 +1,67 @@
 import { Component } from '@angular/core';
-
-
+import { UserDto } from 'src/app/shared/dto/user-dto.model';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.css']
+  styleUrls: ['./user-list.component.css'],
+  providers: [UserService]
 })
 export class UserListComponent {
-  usersList: any[] = 
-  [
-    {
-      "userId": 1,
-      "firstName": "Alejandro",
-      "lastName": "Larios",
-      "email": "macdroopy@eldebugger.com",
-    },
-    {
-      "userId": 2,
-      "firstName": "Sonia",
-      "lastName": "Zuniga",
-      "email": "stzalan@gmail.com",
+    public userDto: UserDto = new UserDto();
+    public usersList: UserDto[] = [];
+
+    constructor(private _userService: UserService){
+      
     }
-  ];
 
-  public ngOnChanges() {
-    console.log("ngOnChanges");
-  }
+    public  ngOnInit() {
+      this.usersList = this._userService.getUsersList();
+      console.log("app-user-list-ngOnInit");
+    }
 
-  public  ngOnInit() {
-    console.log("ngOnInit");
-  }
+    public ngOnChanges() {
+      console.log("app-user-list-ngOnChanges");
+    }
 
-  public ngDoCheck() {
-    console.log("ngDoCheck");
-  }
-  
-  public ngAfterContentInit() {
-    console.log("ngAfterContentInit");
-  }
+    public ngDoCheck() {
+      console.log("app-user-list-ngDoCheck");
+    }
+    
+    public ngAfterContentInit() {
+      console.log("app-user-list-ngAfterContentInit");
+    }
 
-  public ngAfterContentChecked() {
-    console.log("ngAfterContentChecked");
-  }
+    public ngAfterContentChecked() {
+      console.log("app-user-list-ngAfterContentChecked");
+    }
 
-  public ngAfterViewInit() {
-    $("#tblUserList").DataTable({
-      "paging": true,
-      "lengthChange": true,
-      "searching": true,
-      "ordering": true,
-      "info": true,
-      "autoWidth": true
-    });
-    console.log("ngAfterViewInit");
-  }
+    public ngAfterViewInit() {
+      $("#tblUserList").DataTable({
+        "paging": true,
+        "lengthChange": true,
+        "searching": true,
+        "ordering": true,
+        "info": true,
+        "autoWidth": true
+      });
+      console.log("app-user-list-ngAfterViewInit");
+    }
 
-  public ngAfterViewChecked() {
-    console.log("ngAfterViewChecked");
-  }
+    public ngAfterViewChecked() {
+      console.log("app-user-list-ngAfterViewChecked");
+    }
 
-  public ngOnDestroy() {
-    console.log("ngOnDestroy");
-  }
+    public ngOnDestroy() {
+      console.log("app-user-list-ngOnDestroy");
+    }
 
-  OnClick_Edit(userId: string){
-    console.log("OnClicked_Edit: " + userId);
-  }
+    OnClick_Edit(userId: string){
+      console.log("OnClick_Edit: " + userId);
+    }
 
-  OnClick_Delete(userId: string){
-    console.log("OnClicked_Delete: " + userId);
-  }
+    OnClick_Delete(userId: string){
+      console.log("OnClick_Edit: " + userId);
+    }
 }
