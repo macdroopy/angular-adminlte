@@ -9,36 +9,36 @@ import * as $ from 'jquery';
 export class MainSidebarComponent {
   
   public ngOnChanges() {
-    console.log("app-main-sidebar-ngOnChanges");
+    //console.log("app-main-sidebar-ngOnChanges");
   }
 
   public  ngOnInit() {
-    console.log("app-main-sidebar-ngOnInit");
+    //console.log("app-main-sidebar-ngOnInit");
     this.OnSelected_Menu('LiUsers', 'Null');
   }
 
   public ngDoCheck() {
-    console.log("app-main-sidebar-ngDoCheck");
+    //console.log("app-main-sidebar-ngDoCheck");
   }
   
   public ngAfterContentInit() {
-    console.log("app-main-sidebar-ngAfterContentInit");
+    //console.log("app-main-sidebar-ngAfterContentInit");
   }
 
   public ngAfterContentChecked() {
-    console.log("app-main-sidebar-ngAfterContentChecked");
+    //console.log("app-main-sidebar-ngAfterContentChecked");
   }
 
   public ngAfterViewInit() {
-    console.log("app-main-sidebar-ngAfterViewInit");
+    //console.log("app-main-sidebar-ngAfterViewInit");
   }
 
   public ngAfterViewChecked() {
-    console.log("app-main-sidebar-ngAfterViewChecked");
+    //console.log("app-main-sidebar-ngAfterViewChecked");
   }
 
   public ngOnDestroy() {
-    console.log("app-main-sidebar-ngOnDestroy");
+    //console.log("app-main-sidebar-ngOnDestroy");
   }
 
   OnSelected_Menu (LiParent: string, LiChild:string) {
