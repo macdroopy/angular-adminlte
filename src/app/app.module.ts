@@ -4,8 +4,6 @@ import { RouterModule } from '@angular/router';
 import appRoutes from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { UserAddEditComponent } from './user/user-add-edit/user-add-edit.component';
-import { UserListComponent } from './user/user-list/user-list.component';
 import { LoginComponent } from './account/login/login.component';
 import { LogoutComponent } from './account/logout/logout.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
@@ -17,13 +15,12 @@ import { ControlSidebarComponent } from './control-sidebar/control-sidebar/contr
 import { UserDetailsComponent } from './user/user-details/user-details.component';
 import {DataTablesModule} from 'angular-datatables';
 import { HttpClientModule } from '@angular/common/http';
+import { UserModule } from './user/user.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserAddEditComponent,
-    UserListComponent,
     LoginComponent,
     LogoutComponent,
     DashboardComponent,
@@ -40,7 +37,8 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot(appRoutes),
     FormsModule,
     DataTablesModule,
-    HttpClientModule
+    HttpClientModule,
+    UserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

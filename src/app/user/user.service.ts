@@ -14,7 +14,10 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getUserById(userId: string): UserDto {
+  public getUserById(userId: number): UserDto {
+    if (isNaN(userId)) {
+      
+    }
     return this.user;
   }
 

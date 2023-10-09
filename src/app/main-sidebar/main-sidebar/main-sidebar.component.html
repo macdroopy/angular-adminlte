@@ -3,7 +3,7 @@
         <ul class="sidebar-menu" data-widget="tree">
 
             <li id="LiDashBoard" (click)="OnSelected_Menu('LiDashBoard', 'Null')">
-                <a routerLink="dashboard">
+                <a [routerLink]="['dashboard']" class="nav-link">
                     <i class="fa fa-dashboard"></i><span>DashBoard</span>
                 </a>
             </li>
@@ -17,12 +17,12 @@
                 </a>
                 <ul class="treeview-menu">
                     <li id="LiUserAddEdit" (click)="OnSelected_Menu('LiUsers', 'LiUserAddEdit')">
-                        <a  routerLink="user-add-edit">
+                        <a routerLink="/user-add-edit/0" class="nav-link">
                             <i class="fa fa-circle-o"></i>Add/Update
                         </a>
                     </li>
                     <li id="LiUserList" (click)="OnSelected_Menu('LiUsers', 'LiUserList')">
-                        <a routerLink="user-list">
+                        <a routerLink="user-list" class="nav-link">
                             <i class="fa fa-circle-o"></i>List
                         </a>
                     </li>
