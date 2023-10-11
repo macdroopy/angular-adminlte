@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { UserDto } from '../shared/dto/user-dto.model';
+import { UserDto } from 'src/app/shared/dto/user-dto.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, catchError, tap, throwError } from 'rxjs';
+import { Observable, catchError, of, tap, throwError } from 'rxjs';
+import { IUserDto } from 'src/app/shared/interfaces/iuser-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -42,5 +43,9 @@ export class UserService {
     }
     console.log(`Error Message: ${errorMessage} at ${Date.now()}`);
     return throwError(() => errorMessage);
+  }
+
+  OnPostUserForm(userDto: IUserDto): Observable<IUserDto> {
+    return of(userDto);
   }
 }

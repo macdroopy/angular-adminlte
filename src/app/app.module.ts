@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import appRoutes from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './account/login/login.component';
 import { LogoutComponent } from './account/logout/logout.component';
@@ -29,13 +29,14 @@ import { UserModule } from './user/user.module';
     ContentWrapperComponent,
     MainFooterComponent,
     ControlSidebarComponent,
-    UserDetailsComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
     RouterModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    ReactiveFormsModule,
     DataTablesModule,
     HttpClientModule,
     UserModule

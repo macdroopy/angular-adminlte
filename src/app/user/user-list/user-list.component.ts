@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { UserDto } from 'src/app/shared/dto/user-dto.model';
-import { UserService } from '../user.service';
+import { UserService } from 'src/app/shared/services/user.service';
 import { Subscription } from 'rxjs';
 
 @Component({
