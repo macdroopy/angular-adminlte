@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { UserDto } from 'src/app/shared/dto/user-dto.model';
 import { UserService } from 'src/app/shared/services/user.service';
 import { Subscription } from 'rxjs';
+import { UserDto } from 'src/app/shared/dto/user-dto.model';
 
 @Component({
   selector: 'app-user-list',
@@ -11,8 +11,7 @@ import { Subscription } from 'rxjs';
 })
 
 export class UserListComponent implements OnInit, OnDestroy {
-  public userDto: UserDto = new UserDto();
-  public usersList: UserDto[] = [];
+  public usersDtoList: UserDto[] = [];
   public errorMessage: string = '';
   public subscription!: Subscription;
 
@@ -21,7 +20,7 @@ export class UserListComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.userService.getUsersList().subscribe({
       next: (usersList) => {
-        this.usersList = usersList;
+        this.usersDtoList = usersList;
       },
       error: (err) => (this.errorMessage = err),
     });

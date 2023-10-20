@@ -12,7 +12,7 @@
 					</div>
 				</div>
 				<div class="box-body">
-					<table id="tblUserList" class="table table-bordered table-striped" *ngIf="usersList.length">
+					<table id="tblUserList" class="table table-bordered table-striped" *ngIf="usersDtoList.length">
 						<thead>
 							<tr>
 								<th>Id</th>
@@ -23,7 +23,7 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr *ngFor="let item of usersList">
+							<tr *ngFor="let item of usersDtoList">
 								<td class="text-center">{{ item.userId }}</td>
 								<td>{{ item.firstName }}</td>
 								<td>{{ item.lastName }}</td>

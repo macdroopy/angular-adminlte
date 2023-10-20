@@ -1,37 +1,40 @@
 import { Injectable } from '@angular/core';
-import { UserDto } from 'src/app/shared/dto/user-dto.model';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Observable, catchError, of, tap, throwError } from 'rxjs';
-import { IUserDto } from 'src/app/shared/interfaces/iuser-dto';
+import { Observable, catchError, map, of, tap, throwError } from 'rxjs';
+import { UserDto } from '../dto/user-dto.model';
 
 @Injectable({
   providedIn: 'root',
 })
 
 export class UserService {
-  public user: UserDto = new UserDto();
-  public userList: UserDto[] = [];
+  public fullName: string = "";
+  public userDto: UserDto = new UserDto;
+  public userDtoList: UserDto[] = [];
   public webApiUrl: string = 'api/user/userslist.json';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { 
 
-  public getUserById(userId: number): UserDto {
-    if (isNaN(userId)) {
-      
-    }
-    return this.user;
   }
 
-  public getUserFullName(user: UserDto): string {
-    return user.firstName + ' ' + user.lastName;
+  public getUserById(userId: number): Observable<UserDto> {
+    return this.httpClient.get<UserDto>(this.webApiUrl).pipe(
+      tap((data) => console.log('All', JSON.stringify(data))),
+      catchError(this.handleError)
+    );
   }
 
+  
   public getUsersList(): Observable<UserDto[]> {
-    console.log('webApiUrl: ' + this.webApiUrl);
     return this.httpClient.get<UserDto[]>(this.webApiUrl).pipe(
       tap((data) => console.log('All', JSON.stringify(data))),
       catchError(this.handleError)
     );
+  }
+
+  public getUserFullName(user: UserDto): string {
+    this. fullName = user.firstName + ' ' + user.lastName;
+    return this.fullName;
   }
 
   private handleError(err: HttpErrorResponse) {
@@ -45,7 +48,7 @@ export class UserService {
     return throwError(() => errorMessage);
   }
 
-  OnPostUserForm(userDto: IUserDto): Observable<IUserDto> {
+  OnPostUserForm(userDto: UserDto): Observable<UserDto> {
     return of(userDto);
   }
 }

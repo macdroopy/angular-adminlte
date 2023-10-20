@@ -12,10 +12,10 @@
                             <input type="text" 
                                 id="txtUserId" 
                                 name="txtUserId"
+                                [(ngModel)]="userDto.userId"
                                 class="form-control" 
                                 style="border-radius: 5px 5px 5px 5px;" 
-                                required 
-                                [(ngModel)]="userDto.userId">
+                                required>
                         </div>
 
                         <div class="form-group">
@@ -23,12 +23,12 @@
                             <input type="text" 
                                 id="txtFirstName" 
                                 name="txtFirstName"
+                                [(ngModel)]="userDto.firstName"
                                 class="form-control"
                                 style="border-radius: 5px 5px 5px 5px;" 
-                                required 
                                 minlength="3"
                                 maxlength="10"
-                                [(ngModel)]="userDto.firstName">
+                                required>
                         </div>
 
                         <div class="form-group">
@@ -36,12 +36,12 @@
                             <input type="text" 
                                 id="txtLastName" 
                                 name="txtLastName" 
+                                [(ngModel)]="userDto.lastName"
                                 class="form-control" 
                                 style="border-radius: 5px 5px 5px 5px;" 
-                                required 
                                 minlength="3"
                                 maxlength="20"
-                                [(ngModel)]="userDto.lastName">
+                                required>
                         </div>
 
                         <div class="form-group">
@@ -49,12 +49,12 @@
                             <input type="email" 
                                 id="txtEmailAddress" 
                                 name="txtEmailAddress" 
+                                [(ngModel)]="userDto.email"
                                 class="form-control" 
                                 style="border-radius: 5px 5px 5px 5px;" 
-                                required 
                                 minlength="7"
                                 maxlength="30"
-                                [(ngModel)]="userDto.email">
+                                required>
                         </div>
 
                     </div>
