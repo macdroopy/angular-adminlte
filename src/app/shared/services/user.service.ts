@@ -14,22 +14,22 @@ export class UserService {
   public webApiUrl: string = 'api/user/userslist.json';
 
   constructor(private httpClient: HttpClient) { 
+  }
 
+  OnPostUserForm(userDto: UserDto): Observable<UserDto> {
+    return of(userDto);
   }
 
   public getUserById(userId: number): Observable<UserDto> {
-    return this.httpClient.get<UserDto>(this.webApiUrl).pipe(
-      tap((data) => console.log('All', JSON.stringify(data))),
-      catchError(this.handleError)
-    );
+    return this.httpClient.get<UserDto>(this.webApiUrl + userId)
+    .pipe(tap((data) => console.log(userId, JSON.stringify(data))),
+      catchError(this.handleError));
   }
 
-  
   public getUsersList(): Observable<UserDto[]> {
-    return this.httpClient.get<UserDto[]>(this.webApiUrl).pipe(
-      tap((data) => console.log('All', JSON.stringify(data))),
-      catchError(this.handleError)
-    );
+    return this.httpClient.get<UserDto[]>(this.webApiUrl)
+    .pipe(tap((data) => console.log('All', JSON.stringify(data))),
+      catchError(this.handleError));
   }
 
   public getUserFullName(user: UserDto): string {
@@ -46,9 +46,5 @@ export class UserService {
     }
     console.log(`Error Message: ${errorMessage} at ${Date.now()}`);
     return throwError(() => errorMessage);
-  }
-
-  OnPostUserForm(userDto: UserDto): Observable<UserDto> {
-    return of(userDto);
   }
 }
